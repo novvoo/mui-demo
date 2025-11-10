@@ -1,15 +1,8 @@
-@import "tailwindcss";
+/* 清理后的全局样式 */
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +13,24 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #ffffff !important;
+  color: #000000 !important;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 为MUI Box组件确保良好的文字可见性 */
+.MuiBox-root {
+  color: inherit;
+}
+
+/* 确保根元素背景色正确 */
+html, body, #__next {
+  background-color: #ffffff !important;
+}
+
+/* 提升整体文字对比度 */
+* {
+  box-sizing: border-box;
 }
